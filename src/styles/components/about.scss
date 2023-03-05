@@ -1,0 +1,102 @@
+@use "../globals/colors.scss";
+
+#about {
+  padding: 5rem 0;
+
+  .about--row {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    @media screen and (min-width: 48rem) {
+      flex-direction: row-reverse;
+    }
+
+    .about--content {
+      display: flex;
+      flex-direction: column;
+
+      .about--topline {
+        margin-bottom: 0.5rem;
+        color: colors.$brand;
+        font-weight: 700;
+        font-size: 0.9rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+      .about--title {
+        margin-bottom: 1rem;
+        color: colors.$textDark;
+        font-weight: 700;
+        font-size: clamp(2.5rem, 6vw, 3.5rem);
+        line-height: 1.2;
+      }
+      .about--description {
+        margin-bottom: 2rem;
+        max-width: 27rem;
+        color: colors.$textRegular;
+        font-weight: 400;
+        font-size: 1.1rem;
+        line-height: 1.5rem;
+        p {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+
+    .about--testimonials {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .about--testimonial_card {
+      display: flex;
+      gap: 1rem;
+      box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+      border-radius: 5px;
+      background-color: colors.$bgRegular;
+      padding: 2rem 1rem;
+
+      .testimonial--profileLogo {
+        width: 7rem;
+
+        img {
+          border-radius: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .testinomial--name {
+        // margin-bottom: 0.5rem;
+        color: colors.$textDark;
+        font-weight: 700;
+        font-size: 1.1rem;
+        line-height: 1.2;
+      }
+      .testimonial--jobTitle {
+        margin-bottom: 1rem;
+        color: colors.$textRegular;
+        font-weight: 400;
+        font-size: 0.9rem;
+        line-height: 1;
+      }
+      .testimonial--text {
+        margin-top: 1rem;
+        color: colors.$textRegular;
+        font-style: italic;
+        font-weight: 400;
+        font-size: 1rem;
+        line-height: 1;
+
+        &::before,
+        &::after {
+          content: "“";
+          color: colors.$brand;
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}

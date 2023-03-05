@@ -1,0 +1,47 @@
+@use "../globals/colors.scss";
+
+.section--card {
+  display: flex;
+  gap: 1rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  border-radius: 5px;
+  background-color: colors.$bgRegular;
+  padding: 2rem 1rem;
+}
+
+.card--logo {
+  width: 5rem;
+
+  img {
+    border-radius: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.card--content {
+}
+
+.card--title {
+  color: colors.$textDark;
+  font-weight: 700;
+  font-size: 1.1rem;
+  line-height: 1.2;
+}
+
+.card--subtitle {
+  margin-bottom: 1rem;
+  color: colors.$textRegular;
+  font-weight: 400;
+  font-size: 0.9rem;
+  line-height: 1;
+}
+
+.card--text {
+  margin-top: 1rem;
+  color: colors.$textRegular;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1;
+}
