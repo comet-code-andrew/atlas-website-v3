@@ -4,6 +4,7 @@ import References from "@/components/References";
 import About from "@/components/About";
 import Partners from "@/components/Partners";
 import Section from "@/components/Section";
+import Services from "@/components/Services";
 
 export default function Home() {
   console.log("Hello");
@@ -19,6 +20,7 @@ export default function Home() {
       <About />
       <References />
       <Partners />
+      <Services />
     </>
   );
 }

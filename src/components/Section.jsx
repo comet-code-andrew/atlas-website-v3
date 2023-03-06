@@ -1,7 +1,7 @@
 import React from "react";
 import SectionCard from "./SectionCard";
 
-const Section = ({ sectionId }) => {
+const Section = ({ sectionId, children }) => {
   return (
     <div id={sectionId}>
       <div className="container">
@@ -31,7 +31,8 @@ const Section = ({ sectionId }) => {
               </p>
             </div>
           </div>
-          <div className="section--cards-container">
+          {children}
+          {/* <div className="section--cards-container">
             <SectionCard
               imgUrl={
                 "https://media.licdn.com/dms/image/C4E03AQGIQvHuF8yPZQ/profile-displayphoto-shrink_800_800/0/1639654187897?e=1683763200&v=beta&t=0pYbvAwDTJRMcndHjEZpdCl7FOuRuJ7JIRI_6FzZMU4"
@@ -59,7 +60,7 @@ const Section = ({ sectionId }) => {
               subtitle={"Manager"}
               text={"Some Cool Text Here"}
             />
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

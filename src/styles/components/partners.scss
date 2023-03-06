@@ -1,33 +1,112 @@
 @use "../globals/colors.scss";
 
 #partners {
-  padding: 4rem 0 3rem 0;
-  height: 100vh;
+  padding: 5rem 0;
+
+  .partners--row {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 5rem 0;
+
+    @media screen and (min-width: 48rem) {
+      flex-direction: row;
+    }
+  }
 
   @media screen and (min-width: 48rem) {
     padding: 3rem 0 2rem 0;
   }
 
-  .partners--title {
-    color: colors.$textRegular;
-    font-weight: 700;
-    font-size: 2rem;
-    line-height: 1.2;
-    text-align: center;
-  }
-
-  .partners--image_container {
+  .partners--content {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    padding: 3rem 0;
+
+    .partners--topline {
+      margin-bottom: 0.5rem;
+
+      font-weight: 700;
+      font-size: 0.9rem;
+      // letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .partners--title {
+      margin-bottom: 1rem;
+      color: colors.$textDark;
+      font-weight: 700;
+      font-size: clamp(2.5rem, 6vw, 3.5rem);
+      line-height: 1.2;
+    }
+    .partners--description {
+      margin-bottom: 2rem;
+      max-width: 27rem;
+      color: colors.$textRegular;
+      font-weight: 400;
+      font-size: 1.1rem;
+      line-height: 1.5rem;
+      & > * {
+        margin-bottom: 1rem;
+      }
+    }
+    .partners--list {
+      display: flex;
+      gap: 1rem;
+
+      & > * {
+        font-weight: 600;
+        text-decoration: underline;
+        text-decoration-color: colors.$brand;
+        text-decoration-thickness: 3px;
+        text-underline-offset: 2px;
+      }
+    }
+  }
+
+  .partners--cards {
+    display: flex;
+    // width: 100%;
+    flex: 1;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .partners--card {
+    position: relative;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  .partners--card_base-image {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-top: -3px;
+    border-radius: 5px;
+    height: 20rem;
+    img {
+      border-radius: inherit;
+    }
 
     @media screen and (min-width: 48rem) {
-      flex-direction: row;
-      justify-content: space-evenly;
-      padding: 2rem 0;
+      height: 10rem;
+    }
+  }
+  .partners--card_logo-image {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    width: 12rem;
+    img {
+      border-radius: 0 0 5px 0;
+    }
+  }
+  .partners--card {
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
   }
 }
