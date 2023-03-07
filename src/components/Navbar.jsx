@@ -19,10 +19,13 @@ const Navbar = () => {
         <nav>
           <ul className={click ? "nav--menu active" : "nav--menu"}>
             <li className="nav--item">
-              <Link href="/about">About</Link>
+              <Link href="#about">About</Link>
             </li>
             <li className="nav--item">
-              <Link href="/services">Services</Link>
+              <Link href="#services">Services</Link>
+            </li>
+            <li className="nav--item">
+              <Link href="#partners">Partners</Link>
             </li>
             <li className="nav--item">
               <Link href="/contact">Contact</Link>

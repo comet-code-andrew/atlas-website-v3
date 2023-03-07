@@ -2,8 +2,10 @@
 
 .navbar--container {
   display: flex;
-  // position: sticky;
+  position: sticky;
+  top: 0;
   align-items: center;
+  z-index: 100;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
   background: colors.$bgRegular;
   height: 5rem;
@@ -24,7 +26,7 @@
 
   .nav--menu {
     display: none;
-    top: -100%;
+    z-index: 100;
 
     @media screen and (min-width: 40rem) {
       display: flex;
@@ -44,8 +46,9 @@
     gap: 3rem;
     opacity: 1;
     transition: all 0.5s ease;
-    background: #fff;
+    background: colors.$bgRegular;
     padding-top: 3rem;
+    height: 100vh;
     font-size: 1.5rem;
   }
 }
