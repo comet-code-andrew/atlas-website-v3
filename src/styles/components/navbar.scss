@@ -1,6 +1,6 @@
 @use "../../styles/globals/colors.scss";
 
-.navbar--container {
+#navbar {
   display: flex;
   position: sticky;
   top: 0;
@@ -10,7 +10,7 @@
   background: colors.$bgRegular;
   height: 5rem;
 
-  .navbar--wrapper {
+  .wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -24,7 +24,7 @@
     }
   }
 
-  .nav--menu {
+  .menu {
     display: none;
     z-index: 100;
 
@@ -51,14 +51,17 @@
     height: 100vh;
     font-size: 1.5rem;
   }
-}
 
-.mobile--icon {
-  z-index: 100;
-  cursor: pointer;
-  font-size: 1.8rem;
+  .menu-item {
+  }
 
-  @media screen and (min-width: 40rem) {
-    display: none;
+  .mobile-icon {
+    z-index: 100;
+    cursor: pointer;
+    font-size: 1.8rem;
+
+    @media screen and (min-width: 40rem) {
+      display: none;
+    }
   }
 }
