@@ -15,7 +15,7 @@ const Partners = () => {
                 <a href="https://www.gilbos.com/nl/">SWISS</a>
               </div>
             </div>
-            <div className="partners--title">Our Partners</div>
+            <h3 className="partners--title">Our Partners</h3>
             <div className="partners--description">
               <p>
                 Europes leading textile machine manufacturers for thermofixation

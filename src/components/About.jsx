@@ -9,7 +9,7 @@ const About = () => {
             <div className="about--topline">
               Helping Businesses Become Efficient
             </div>
-            <div className="about--title">About Us</div>
+            <h2 className="about--title">About Us</h2>
             <div className="about--description">
               <p>
                 With years of experience in the industry, we have established

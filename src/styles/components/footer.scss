@@ -1,0 +1,86 @@
+@use "../globals/colors.scss";
+
+#footer {
+  background-color: colors.$bgRegular;
+}
+
+.footer--row {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 5rem 0;
+
+  @media screen and (min-width: 48rem) {
+    flex-direction: row;
+  }
+}
+
+.footer--col {
+  flex: 1;
+}
+
+.footer--content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  //   align-items: center;
+  gap: 1.5rem;
+}
+
+.footer--title {
+  margin-bottom: 1rem;
+  color: colors.$textDark;
+  font-weight: 500;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.2;
+}
+
+.footer--contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-weight: 300;
+  font-size: 1rem;
+}
+
+// .footer--email {
+//   color: colors.$textRegular;
+//   font-weight: 400;
+//   font-size: 1.1rem;
+//   line-height: 1.5rem;
+// }
+// .footer--phone {
+//   color: colors.$textRegular;
+//   font-weight: 400;
+//   font-size: 1.1rem;
+//   line-height: 1.5rem;
+// }
+
+.footer--address {
+  margin-bottom: 1rem;
+  color: colors.$textRegular;
+  font-weight: 300;
+  font-size: 1.1rem;
+  //   line-height: 1.5rem;
+}
+
+.footer--trademark {
+  padding-bottom: 1rem;
+  color: colors.$textRegular;
+  font-weight: 200;
+  font-size: 0.8rem;
+  line-height: 1.5rem;
+
+  @media screen and (min-width: 48rem) {
+    text-align: center;
+  }
+}
+
+.nextmove {
+  display: block;
+  padding-bottom: 1rem;
+  color: colors.$textRegular;
+  font-weight: 200;
+  font-size: 0.8rem;
+  line-height: 1.5rem;
+}
