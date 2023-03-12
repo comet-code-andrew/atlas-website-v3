@@ -1,16 +1,19 @@
 import React from "react";
+import Card from "./Card";
 
-const SectionCard = ({ imgUrl, altText, title, subtitle, text }) => {
+const SectionCard = ({ cardsData }) => {
   return (
-    <div className="section--card">
-      <div className="card--logo">
-        <img src={imgUrl} alt={altText} />
-      </div>
-      <div className="card--content">
-        <h5 className="card--title">{title}</h5>
-        <div className="card--subtitle">{subtitle}</div>
-        <div className="card--text">{text}</div>
-      </div>
+    <div className="section-card-group">
+      {cardsData.map(({ id, imgUrl, altText, title, subtitle, text }) => (
+        <Card
+          key={id}
+          imgUrl={imgUrl}
+          altText={altText}
+          title={title}
+          subtitle={subtitle}
+          text={text}
+        />
+      ))}
     </div>
   );
 };

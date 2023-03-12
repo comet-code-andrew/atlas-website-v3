@@ -1,1 +1,169 @@
 @use "../globals/colors.scss";
+
+.section-container {
+  padding: 5rem 0;
+
+  .section-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    width: 100%;
+
+    .section-col-content {
+      flex: 1;
+      // border: 1px solid cornflowerblue;
+
+      .topline {
+        margin-bottom: 0.5rem;
+        color: colors.$brand;
+        font-weight: 700;
+        font-size: 0.9rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+      .title {
+        margin-bottom: 1rem;
+        color: colors.$textDark;
+        font-weight: 700;
+        font-size: clamp(2.5rem, 6vw, 3.5rem);
+        line-height: 1.2;
+      }
+      .description {
+        margin-bottom: 2rem;
+        max-width: 95%;
+        color: colors.$textRegular;
+        font-weight: 400;
+        font-size: 1.1rem;
+        line-height: 1.5rem;
+      }
+      .btn {
+        display: block;
+        cursor: pointer;
+        box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+        border: none;
+        border-radius: 5px;
+        background-color: colors.$brand;
+        padding: 1rem;
+        width: 100%;
+        color: colors.$white;
+        font-weight: 600;
+        font-size: 1.2rem;
+        text-align: center;
+
+        &:hover {
+          transition: all 0.5s ease;
+          background-color: colors.$primary;
+        }
+      }
+    }
+    .section-col-asset {
+      flex: 1;
+      // border: 1px solid tomato;
+
+      .image {
+        width: 100%;
+
+        img {
+          width: 100%;
+          // max-width: 27rem;
+          object-fit: cover;
+        }
+      }
+
+      .section-card-group {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        .card {
+          display: flex;
+          gap: 1rem;
+          box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+          border-radius: 5px;
+          background-color: colors.$bgRegular;
+          padding: 2rem 1rem;
+          .image {
+            width: 6rem;
+
+            img {
+              border-radius: 100%;
+              width: 100%;
+              object-fit: cover;
+            }
+          }
+          .content {
+            .title {
+              color: colors.$textDark;
+              font-weight: 700;
+              font-size: 1.1rem;
+              line-height: 1.2;
+            }
+            .subtitle {
+              margin-bottom: 1rem;
+              color: colors.$textRegular;
+              font-weight: 400;
+              font-size: 0.9rem;
+              line-height: 1;
+            }
+            .text {
+              margin-top: 1rem;
+              color: colors.$textRegular;
+              font-style: italic;
+              font-weight: 400;
+              font-size: 1rem;
+              line-height: 1;
+
+              &::before,
+              &::after {
+                content: "“";
+                color: colors.$brand;
+                font-size: 1.2rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  // Row Options
+  .row {
+    & > * {
+      flex: 1;
+    }
+    @media screen and (min-width: 48rem) {
+      flex-direction: row;
+      .section-col-content {
+        flex-grow: 40;
+      }
+      .section-col-asset {
+        flex-grow: 60;
+      }
+    }
+  }
+  .row-reverse {
+    @media screen and (min-width: 48rem) {
+      flex-direction: row-reverse;
+      .section-col-content {
+        flex-grow: 40;
+      }
+      .section-col-asset {
+        flex-grow: 60;
+      }
+    }
+  }
+  .even {
+    @media screen and (min-width: 48rem) {
+      .section-col-content {
+        flex-grow: 5;
+      }
+      .section-col-asset {
+        flex-grow: 5;
+      }
+    }
+  }
+}
+
+// Background Color Options
+.bg-regular {
+  background: colors.$bgRegular;
+}
