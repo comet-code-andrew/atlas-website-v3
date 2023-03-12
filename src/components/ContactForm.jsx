@@ -1,55 +1,24 @@
-import React, { useRef } from "react";
+import React from "react";
+import { useForm, ValidationError } from "@formspree/react";
 
 const ContactForm = () => {
-  const nameRef = useRef();
-  const emailRef = useRef();
-  const messageRef = useRef();
+  const formID = "xayzbbyl";
+  const [state, handleSubmit] = useForm(formID);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    const name = nameRef.current.value;
-    const email = emailRef.current.value;
-    const message = messageRef.current.value;
-
-    alert(`Name: ${name}, Email: ${email}, Message: ${message}`);
-    e.target.reset();
-  };
+  if (state.succeeded) {
+    return <p>Thanks for meesage! We will come back to earliest possible</p>;
+  }
 
   return (
     <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="name">Name</label>
-        <input
-          id="name"
-          type="text"
-          placeholder="Name"
-          required
-          ref={nameRef}
-        />
-      </div>
-      <div>
-        <label htmlFor="email">Email</label>
-        <input
-          id="email"
-          type="email"
-          placeholder="Email"
-          required
-          ref={emailRef}
-        />
-      </div>
-      <div>
-        <label htmlFor="message">Message</label>
-        <textarea
-          name=""
-          id="message"
-          cols="30"
-          rows="10"
-          required
-          ref={messageRef}
-        ></textarea>
-      </div>
-      <input type="submit" value="Send" />
+      <label htmlFor="email">Email Address</label>
+      <input id="email" type="email" name="email" />
+      <ValidationError prefix="Email" field="email" errors={state.errors} />
+      <textarea id="message" name="message" />
+      <ValidationError prefix="Message" field="message" errors={state.errors} />
+      <button type="submit" disabled={state.submitting}>
+        Submit
+      </button>
     </form>
   );
 };
