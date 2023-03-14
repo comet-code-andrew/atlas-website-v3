@@ -5,7 +5,7 @@ import logo from "../../public/atlas-logo-md.png";
 
 import { FaTimes, FaBars } from "react-icons/fa";
 
-const Navbar = () => {
+const Navbar = ({ t }) => {
   const [click, setClick] = useState(false);
 
   const handleClick = () => setClick(!click);
@@ -19,16 +19,16 @@ const Navbar = () => {
         <nav>
           <ul className={click ? "menu active" : "menu"}>
             <li className="menu-item">
-              <Link href="/#about">About</Link>
+              <Link href="/#about">{t.menu.about}</Link>
             </li>
             <li className="menu-item">
-              <Link href="/#services">Services</Link>
+              <Link href="/#services">{t.menu.services}</Link>
             </li>
             <li className="menu-item">
-              <Link href="/#partners">Partners</Link>
+              <Link href="/#partners">{t.menu.partners}</Link>
             </li>
             <li className="menu-item">
-              <Link href="/contact">Contact</Link>
+              <Link href="/contact">{t.menu.contact}</Link>
             </li>
           </ul>
         </nav>

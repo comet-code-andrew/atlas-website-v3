@@ -1,20 +1,17 @@
 import React from "react";
 import Link from "next/link";
 
-const Hero = () => {
+const Hero = ({ t }) => {
   return (
     <div id="hero">
       <div className="container">
         <div className="hero--row">
           <div className="hero--content">
-            <div className="hero--topline">Your Technical Business Partner</div>
+            <div className="hero--topline">{t.hero.topLine}</div>
             <h1 className="hero--title">Atlas Kontrol Sistemleri</h1>
-            <p className="hero--description">
-              End-to-end solutions with 20+ years hands on experince in
-              machinery, troubleshooting, spare supply and more
-            </p>
+            <p className="hero--description">{t.hero.desc}</p>
             <Link href="/contact" className="hero--btn">
-              Get In Touch
+              {t.hero.btn}
             </Link>
           </div>
           <div className="hero--image">

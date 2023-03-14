@@ -5,9 +5,16 @@ import About from "@/components/About";
 import Partners from "@/components/Partners";
 import Section from "@/components/Section";
 import Services from "@/components/Services";
+import { useRouter } from "next/router";
+import en from "../../locales/en";
+import tr from "../../locales/tr";
 
 export default function Home() {
-  console.log("Hello");
+  const router = useRouter();
+  const { locale, locales, defaultLocale } = router;
+
+  const t = locale === "en" ? en : tr;
+
   return (
     <>
       <Head>
@@ -16,11 +23,11 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.png" />
       </Head>
-      <Hero />
-      <About />
-      <References />
-      <Partners />
-      <Services />
+      <Hero t={t} />
+      <About t={t} />
+      <References t={t} />
+      <Partners t={t} />
+      <Services t={t} />
     </>
   );
 }

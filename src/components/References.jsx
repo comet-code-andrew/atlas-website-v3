@@ -1,10 +1,10 @@
 import React from "react";
 
-const References = () => {
+const References = ({ t }) => {
   return (
     <div id="references">
       <div className="container">
-        <div className="references--title">Trusted by +50 Companies</div>
+        <div className="references--title">{t.references}</div>
         <div className="references--image_container">
           <img
             src="/kartal.png"

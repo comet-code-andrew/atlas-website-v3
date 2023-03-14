@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-const Footer = () => {
+const Footer = ({ t }) => {
   return (
     <div id="footer">
       <div className="container">
@@ -10,16 +10,16 @@ const Footer = () => {
           <nav>
             <ul>
               <li className="menu-item">
-                <Link href="/#about">About</Link>
+                <Link href="/#about">{t.menu.about}</Link>
               </li>
               <li className="menu-item">
-                <Link href="/#services">Services</Link>
+                <Link href="/#services">{t.menu.services}</Link>
               </li>
               <li className="menu-item">
-                <Link href="/#partners">Partners</Link>
+                <Link href="/#partners">{t.menu.partners}</Link>
               </li>
               <li className="menu-item">
-                <Link href="/contact">Contact</Link>
+                <Link href="/contact">{t.menu.contact}</Link>
               </li>
             </ul>
           </nav>

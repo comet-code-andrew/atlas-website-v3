@@ -1,10 +1,10 @@
 import React from "react";
 import { FiMail, FiPhone, FiMapPin } from "react-icons/fi";
 
-const ContactInfo = () => {
+const ContactInfo = ({ t }) => {
   return (
     <div className="contact-info">
-      <h5 className="info-title">Contact Information</h5>
+      <h5 className="info-title">{t.contact.info}</h5>
       <p>
         {" "}
         <FiMail className="icon" /> info@atlaskonsis.com

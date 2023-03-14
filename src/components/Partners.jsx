@@ -1,6 +1,6 @@
 import React from "react";
 
-const Partners = () => {
+const Partners = ({ t }) => {
   return (
     <div id="partners">
       <div className="container">
@@ -15,23 +15,11 @@ const Partners = () => {
                 <a href="https://www.gilbos.com/nl/">SWISS</a>
               </div>
             </div>
-            <h3 className="partners--title">Our Partners</h3>
+            <h3 className="partners--title">{t.partners.title}</h3>
             <div className="partners--description">
-              <p>
-                Europes leading textile machine manufacturers for thermofixation
-                and winding
-              </p>
-              {/* <div className="partners--list">
-                <span>Power Heat Set</span>
-                <span>Gilbos</span>
-                <span>SWISS</span>
-              </div> */}
-              <p>
-                We have partnered with market leaders in the industry to deliver
-                the highest quality products to our customers. Our machines are
-                designed with precision engineering and attention to detail to
-                ensure optimal performance and efficiency.
-              </p>
+              {t.partners.desc.map((item, index) => (
+                <p key={index}>{item}</p>
+              ))}
             </div>
           </div>
           <div className="partners--cards">
